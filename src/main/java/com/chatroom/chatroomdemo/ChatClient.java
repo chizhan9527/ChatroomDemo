@@ -19,7 +19,7 @@ public class ChatClient {
         Selector selector = Selector.open();
         socketChannel.register(selector, SelectionKey.OP_READ);
 
-        // 监听服务端发来得消息
+        // 监听服务端发来的消息
         new Thread(new ClientThread(selector)).start();
         // 监听用户输入
         Scanner scanner = new Scanner(System.in);
